@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(58, 58, 58);
+    color: rgb(255, 255, 255);
+    font-family: "Yantramanav", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.title {
+    margin: 20px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fab600;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 16%;
+    height: auto;
+    font-size: 1em;
+    font-family: "Rajdhani";
+    color: #FFF;
+    padding: 6px;
+    text-align: center;
+    list-style-type: none;
+    transition: all 0.2s;
+}
+
+li:nth-of-type(odd) {
+    background-color: rgb(61, 61, 61)
+}
+
+li:nth-of-type(even) {
+    background-color: rgb(73, 73, 73)
+}
+
+li:hover {
+    color: #000;
+    background-color: #fab630;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 380px;
+    font-size: 1.3em;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .container li {
+        width: 100%;
+        font-size: 1.6em;
+    }
+    .title {
+        font-size: 1.5em;
+    }
+    a {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 760px) {
+    .container li {
+        width: 40%;
+    }
+    .title {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 761px) and (max-width: 1600px) {
+    .container li {
+        width: 30%;
+    }
+    .title {
+        font-size: 1.5em;
+    }
+}
