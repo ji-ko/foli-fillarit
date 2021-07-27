@@ -43,11 +43,11 @@ li {
 }
 
 li:nth-of-type(odd) {
-    background-color: rgb(61, 61, 61)
+    background-color: rgb(126, 118, 118)
 }
 
 li:nth-of-type(even) {
-    background-color: rgb(73, 73, 73)
+    background-color: rgb(87, 87, 87)
 }
 
 li:hover {

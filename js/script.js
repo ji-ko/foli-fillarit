@@ -3,14 +3,15 @@ const url = "http://data.foli.fi/citybike";
 const ul = document.querySelector("ul");
 
 fetch(url)
-  .then(res => res.json())
-  .then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     const racks = data.racks;
-    Object.keys(racks).forEach(n => addStation(racks[n]));
+    console.log(racks);
+    Object.keys(racks).forEach((n) => addStation(racks[n]));
   })
   .catch(console.log);
 
-const getStatus = numOfAvailable => {
+const getStatus = (numOfAvailable) => {
   if (numOfAvailable === 0) {
     return `<strong style='color: red'>0</strong>`;
   } else if (numOfAvailable <= 2) {
@@ -19,7 +20,7 @@ const getStatus = numOfAvailable => {
   return `<strong style='color: rgb(136, 224, 85);'>${numOfAvailable}</strong>`;
 };
 
-const addStation = station => {
+const addStation = (station) => {
   const bikesAvailable = station.bikes_avail;
   const name = station.name;
   const slotsAvailable = station.slots_avail;
@@ -27,12 +28,10 @@ const addStation = station => {
   const li = document.createElement("li");
 
   li.innerHTML = ` <p><strong>${name} </strong></p>
-                    <p>Pyöriä käytettävissä: ${getStatus(bikesAvailable)}
-                    </p>
-                    <p> Paikkoja vapaana: <strong>${getStatus(
-                      slotsAvailable
+                    <p>Pyöriä käytettävissä: ${getStatus(
+                      bikesAvailable
                     )} / ${slotsTotal}
-                      </strong></p>
+                    </p>
                     `;
 
   ul.appendChild(li);
